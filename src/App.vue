@@ -1,7 +1,7 @@
 <template>
 	<Push
+		:isOpen="isOpen"
 		noOverlay
-		disableOutsideClick
 		width="400"
 		@openMenu="handleOpenMenu"
 		@closeMenu="handleCloseMenu"
@@ -9,10 +9,11 @@
 		<div class="menulist">
 			<div id="logo">
 				<img class="scaled-image" src="@/assets/logo.png" />
-				<h1>King's Gambit</h1>
-				<h2>A DnD 5e Battletracker</h2>
+				<h1>Sword of Destiny</h1>
+				<h2>The D&amp;D 5e Battletracker</h2>
 			</div>
-			<router-link to="/">Table</router-link>
+			<router-link to="/">Home</router-link>
+			<router-link to="/table">Table</router-link>
 			<router-link to="/about">About</router-link>
 		</div>
 	</Push>
@@ -28,22 +29,29 @@
 
 <script>
 import { Push } from "vue3-burger-menu";
-
 export default {
 	components: {
 		Push,
 	},
+	data() {
+		return {
+			isOpen: false,
+		};
+	},
 	methods: {
 		handleOpenMenu: function (event) {
-			document.querySelector("#page-wrap").classList.add("content-scaled");
+			// this.isOpen = true;
+			// document.querySelector("#page-wrap").classList.add("content-scaled");
 		},
 		handleCloseMenu: function (event) {
-			document.querySelector("#page-wrap").classList.remove("content-scaled");
+			// this.isOpen = false;
+			// document.querySelector("#page-wrap").classList.remove("content-scaled");
 		},
 	},
 };
 </script>
 
+<style src="@/assets/style.css"></style>
 <style>
 #app {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -54,16 +62,22 @@ export default {
 	height: 100%;
 }
 
+#page-wrap,
+.router-contents {
+	height: 100%;
+}
+
 .content-scaled {
 	width: calc(100% - 400px);
 }
+
 nav {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
 }
 
-.bm-burger-button{
+.bm-burger-button {
 	height: 20px;
 	width: 26px;
 }
