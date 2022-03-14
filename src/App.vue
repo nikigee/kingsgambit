@@ -35,6 +35,11 @@ export default {
 	components: {
 		Push,
 	},
+	mounted() {
+      let recaptchaScript = document.createElement('script')
+      recaptchaScript.setAttribute('src', 'https://kit.fontawesome.com/7b30c74067.js')
+      document.head.appendChild(recaptchaScript)
+    },
 	data() {
 		return {
 			isOpen: false,
@@ -95,10 +100,12 @@ body {
 
 .bm-menu {
 	padding-top: 0px;
+	background: #354045;
 }
 
 .bm-item-list {
 	margin-left: 0px;
+	color: #c1cace;
 }
 
 #appNav {
@@ -156,7 +163,7 @@ nav a.router-link-exact-active {
 }
 
 .menulist a{
-	color: #b8b7ad;
+	color: #c1cace;
 	font-family: 'Sorts Mill Goudy', serif;
 	font-weight: normal;
 }
