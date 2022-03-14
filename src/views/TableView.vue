@@ -28,7 +28,7 @@ export default {
 
 <style scoped>
 .table {
-	height: 100%;
+	height: calc(100% - 50px);
   padding-top: 50px;
   padding-left: 10%;
 }
@@ -49,9 +49,9 @@ export default {
 .monsterCard h3{
   margin: 0px;
   padding-top: 15px;
-  padding-bottom: 5px;
   padding-left: 15px;
   padding-right: 15px;
+  font-size: 21px;
 }
 .hpbar{
   text-align: center;
@@ -67,6 +67,7 @@ export default {
 .hpinner{
   width: 50%;
   background: green;
+  padding: 2.5px 0px 2.5px 0px !important;
 }
 .monsterField {
 	display: flex;

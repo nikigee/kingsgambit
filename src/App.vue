@@ -1,7 +1,6 @@
 <template>
 	<Push
 		:isOpen="isOpen"
-		noOverlay
 		width="400"
 		@openMenu="handleOpenMenu"
 		@closeMenu="handleCloseMenu"
@@ -15,6 +14,9 @@
 			<router-link to="/">Home</router-link>
 			<router-link to="/table">Table</router-link>
 			<router-link to="/about">About</router-link>
+			<footer>
+				<span>Created by Nikita &#169; 2022</span>
+			</footer>
 		</div>
 	</Push>
 	<main id="page-wrap">
@@ -54,11 +56,6 @@ export default {
 <style src="@/assets/style.css"></style>
 <style>
 #app {
-	font-family: Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #2c3e50;
 	height: 100%;
 }
 
@@ -72,6 +69,9 @@ export default {
 }
 
 nav {
+	display: flex;
+}
+#page-wrap nav {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
@@ -110,16 +110,20 @@ h2 {
 	margin: 0px;
 }
 #logo h1 {
-	font-size: 1.8em;
+	font-size: 2em;
+	padding-top: 15px;
+	font-variant: small-caps;
 }
 #logo h2 {
-	font-size: 1em;
+	font-size: 16px;
 	font-weight: normal;
 	font-style: italic;
+	font-family: "Lora", serif;
 }
 
 #logo {
 	display: inline-block;
+	padding-bottom: 25px;
 }
 
 nav a {
@@ -133,6 +137,30 @@ nav a {
 }
 
 nav a.router-link-exact-active {
+	color: #42b983;
+}
+.menulist footer {
+	font-style: italic;
+    font-size: 12px;
+    position: absolute;
+    display: flex;
+    bottom: 0px;
+    width: 100%;
+    justify-content: space-around;
+    align-content: space-around;
+    min-height: 40px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.menulist a{
+	color: #b8b7ad;
+	font-family: 'Sorts Mill Goudy', serif;
+	font-weight: normal;
+}
+.menulist a:hover{
 	color: #42b983;
 }
 </style>

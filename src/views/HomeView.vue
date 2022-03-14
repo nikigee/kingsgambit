@@ -51,6 +51,21 @@ h2 {
 .main-menu {
 	text-align: center;
 }
+
+button {
+	border: solid 2px #2c3e50;
+	border-radius: 5px;
+	padding: 15px;
+	font-family: "Lora", serif;
+	background: none;
+	transition: 0.5s;
+}
+button:hover{
+	border: solid 2px #42b983;
+	color: #42b983;
+	box-shadow: 0px 0px 10px #42b983;
+}
+
 .main-menu p {
 	font-style: italic;
 	max-width: 500px;
