@@ -37,7 +37,7 @@
 			<div class="tools">
 				<i
 					class="fa-solid fa-plus"
-					@click="this.$store.commit('PUSH_MONSTER', sampleMonster)"
+					@click="this.$store.commit('PUSH_MONSTER', JSON.parse(JSON.stringify(sampleMonster)))"
 				></i>
 			</div>
 		</div>
