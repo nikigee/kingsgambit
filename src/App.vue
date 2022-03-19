@@ -36,14 +36,20 @@ export default {
 		Push,
 	},
 	mounted() {
-      let recaptchaScript = document.createElement('script')
-      recaptchaScript.setAttribute('src', 'https://kit.fontawesome.com/7b30c74067.js')
-      document.head.appendChild(recaptchaScript)
-    },
+		let recaptchaScript = document.createElement("script");
+		recaptchaScript.setAttribute(
+			"src",
+			"https://kit.fontawesome.com/7b30c74067.js"
+		);
+		document.head.appendChild(recaptchaScript);
+	},
 	data() {
 		return {
 			isOpen: false,
 		};
+	},
+	created() {
+		this.$store.dispatch("initializeStore");
 	},
 	methods: {
 		handleOpenMenu: function (event) {
@@ -148,26 +154,26 @@ nav a.router-link-exact-active {
 }
 .menulist footer {
 	font-style: italic;
-    font-size: 12px;
-    position: absolute;
-    display: flex;
-    bottom: 0px;
-    width: 100%;
-    justify-content: space-around;
-    align-content: space-around;
-    min-height: 40px;
+	font-size: 12px;
+	position: absolute;
+	display: flex;
+	bottom: 0px;
+	width: 100%;
+	justify-content: space-around;
+	align-content: space-around;
+	min-height: 40px;
 	padding-top: 5px;
 	padding-bottom: 5px;
-    flex-direction: column;
-    flex-wrap: wrap;
+	flex-direction: column;
+	flex-wrap: wrap;
 }
 
-.menulist a{
+.menulist a {
 	color: #c1cace;
-	font-family: 'Sorts Mill Goudy', serif;
+	font-family: "Sorts Mill Goudy", serif;
 	font-weight: normal;
 }
-.menulist a:hover{
+.menulist a:hover {
 	color: #42b983;
 }
 </style>
