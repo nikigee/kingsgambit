@@ -1,7 +1,10 @@
 <template>
 	<div class="table">
 		<div class="monsterField">
-			<MonsterCard v-for="monster in $store.state.monsters" v-bind="monster" />
+			<MonsterCard
+				v-for="monster in $store.state.monsters"
+				v-bind="monster"
+			/>
 		</div>
 		<div class="ladder">
 			<h2>Order of Battle</h2>
@@ -25,7 +28,9 @@
 						class="arrow"
 						v-if="
 							monster.mon !=
-							$store.getters.initiativeList[$store.getters.initiativeList.length - 1].mon
+							$store.getters.initiativeList[
+								$store.getters.initiativeList.length - 1
+							].mon
 						"
 					>
 						>
@@ -37,6 +42,10 @@
 			<div class="tools">
 				<i
 					class="fa-solid fa-plus"
+					@click="this.$store.commit('PUSH_MONSTER', sampleMonster)"
+				></i>
+				<i
+					class="fa-solid fa-book"
 					@click="this.$store.commit('PUSH_MONSTER', sampleMonster)"
 				></i>
 			</div>
@@ -91,9 +100,18 @@ export default {
 	box-shadow: 0px 1px 5px rgb(44 51 56 / 10%);
 	border-radius: 10px;
 }
+
+.tools i {
+	display: block;
+	margin: 5px;
+	font-size: 19px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
 .tools-wrap {
 	position: absolute;
-	right: 10px;
+	right: 1.5em;
 	top: 0;
 	bottom: 0;
 	margin: auto;
